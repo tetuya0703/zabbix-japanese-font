@@ -1,8 +1,3 @@
 - name: apt update
-  apt: update=yes
-- name: Install ipafont
-  apt: name=fonts-ipafont state=latest
-- name: alternatives install
-  shell: update-alternatives --install /usr/share/zabbix/fonts/graphfont.ttf zabbix-frontend-font /usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf 50
-- name: alternatives set
-  shell: update-alternatives --set zabbix-frontend-font /usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf
+  apt:
+    update_cache: yes
