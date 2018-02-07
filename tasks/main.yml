@@ -1,6 +1,6 @@
 ---
-- name: Update and upgrade apt packages
-  become: true
-  apt: name={{item}} state=present update_cache=yes
-  with_item:
-    - fonts-ipafont
+- name: Update apt packages
+  raw: "apt-get update"
+
+- name: Install Japanese font
+  raw: "apt-get install -y python libpython2.7 python-apt aptitude"
