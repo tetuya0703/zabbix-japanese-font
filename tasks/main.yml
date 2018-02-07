@@ -1,6 +1,6 @@
 ---
 - name: Update and upgrade apt packages
   become: true
-  apt: pkg={{ item }} update_cache=yes
+  apt: name={{item}} state=present update_cache=yes
   with_item:
     - fonts-ipafont
