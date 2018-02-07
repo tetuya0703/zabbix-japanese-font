@@ -3,4 +3,10 @@
   raw: "apt-get update"
 
 - name: Install Japanese font
-  raw: "apt-get install -y python libpython2.7 python-apt aptitude"
+  raw: "apt-get install -y fonts-ipafont"
+
+- name: Font change
+  raw: "update-alternatives --install /usr/share/zabbix/fonts/graphfont.ttf zabbix-frontend-font /usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf 50"
+
+- name: Change zabbix font
+  raw: "update-alternatives --set zabbix-frontend-font /usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf"
